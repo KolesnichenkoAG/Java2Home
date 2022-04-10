@@ -2,18 +2,28 @@ package lesson1;
 
 public class Cat {
     private int age;
-    private int speedRunning;
+    private int distanceRunning;
     private  int heightJump;
 
-    public Cat(int age, int speedRunning, int heightJump) {
+    public Cat(int age, int distanceRunning, int heightJump) {
         this.age = age;
-        this.speedRunning = speedRunning;
+        this.distanceRunning = distanceRunning;
         this.heightJump = heightJump;
     }
-    public void run() {
-        System.out.println("Cat run ---" + speedRunning);
+    public void run(Treadmill treadmill) {
+        if (treadmill.getRunning() > distanceRunning) {
+            System.out.println("Cat couldn't run");
+        }
+        if (treadmill.getRunning() <= distanceRunning) {
+            System.out.println("Cat run successfully ran");
+        }
     }
-    public void jump() {
-        System.out.println("Cat jump ---" + heightJump);
+    public void jump(Wall wall) {
+        if (wall.getHeight() > heightJump){
+            System.out.println("Cat couldn't jump over");
+        }
+        if (wall.getHeight() <= heightJump) {
+            System.out.println("Cat passed an obstacle");
+        }
     }
 }
