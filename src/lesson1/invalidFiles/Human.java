@@ -1,4 +1,4 @@
-package lesson1;
+package lesson1.invalidFiles;
 
 public class Human {
     private int age;
@@ -10,7 +10,7 @@ public class Human {
         this.distanceRunning = distanceRunning;
         this.heightJump = heightJump;
     }
-    public void run(Treadmill treadmill) {
+    public void run(Treadmill2 treadmill) {
         if (treadmill.getRunning() > distanceRunning){
             System.out.println("Human couldn't run");
         }
@@ -19,12 +19,12 @@ public class Human {
         }
     }
 
-    public void jump(Wall wall) {
+   /* public void jump(Wall wall) {
         if (wall.getHeight() > heightJump){
             System.out.println("Human couldn't jump over");
         }
         if (wall.getHeight() <= heightJump) {
             System.out.println("Human passed an obstacle");
         }
-    }
+    }*/
 }
