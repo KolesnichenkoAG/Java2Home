@@ -1,7 +1,9 @@
 package lesson3;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.Map;
+import java.util.HashMap;
+
 
 public class Words {
     public static void main(String[] args) {
@@ -26,6 +28,39 @@ public class Words {
         System.out.println(wordList);
         int a = wordList.size();
         System.out.println(a);
+        Set<String> uniqueWord = new HashSet<>(wordList);
+        System.out.println(uniqueWord);
+        System.out.println();
+        totalizer();
     }
-
+    public static void totalizer() {
+        Map<String, Integer> frequencyByWord = new HashMap<>();
+        for (String word : INPUT_DATA) {
+            Integer frequency = frequencyByWord.get(word);
+            if (frequency == null) {
+                frequency =0;
+            }
+            frequencyByWord.put(word, frequency +1);
+        }
+        for (Map.Entry<String, Integer> entry : frequencyByWord.entrySet()) {
+            System.out.printf("Слово %s встречаеться %d раз %n", entry.getKey(), entry.getValue());
+        }
+    }
+    private static final String [] INPUT_DATA = {
+            "Первый",
+        "Второй", "Третий",
+                "Четвертый",
+                "Первый",
+                "Первый",
+                "Второй",
+                "Третий",
+                "Пятый",
+                "Шестой",
+                "Седьмой",
+                "Седьмой",
+                "Седьмой",
+                "Девятый",
+                "Десятый",
+                "Десятый"
+    };
 }
